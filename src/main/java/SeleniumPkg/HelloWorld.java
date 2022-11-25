@@ -89,7 +89,7 @@ public class HelloWorld {
 	    
 	    driver.findElement(By.id("licencetype_f")).click();
 	    selectByValueLicence.selectByVisibleText("2");
-	    selectByValueLicence.selectByVisibleText("Student");
+	    selectByValueOcupation.selectByVisibleText("Student");
 	    
 	    driver.findElement(By.id("user_address_attributes_street")).sendKeys("Habarana");
 	    driver.findElement(By.id("user_address_attributes_city")).sendKeys("Dambulla");
@@ -100,13 +100,19 @@ public class HelloWorld {
 	    driver.findElement(By.id("user_user_detail_attributes_password_confirmation")).sendKeys("123");
 	    
 	    driver.findElement(By.name("submit")).click();
+	    
+	    driver.findElement(By.id("email")).sendKeys("ishangamaarachchi@gmail.com");
+	    driver.findElement(By.id("password")).sendKeys("123");
+	    
+	    driver.findElement(By.name("submit")).click();
+	    //sa.assertEquals(((WebElement) driver.findElements(By.linkText("Broker Insurance WebPage"))).getText(),"Broker Insurance WebPage");
 	} 
 
 	@AfterTest
 	public void tearDown() {
 		
-		//driver.close();//close current tab
-		//driver.quit();//close browser
+		driver.close();//close current tab
+		driver.quit();//close browser
 	}
 	
 	
